@@ -31,7 +31,21 @@ public class Decoder {
                     valid = true; //al haber un tipo de operacion es valida
                 }
             }
+            case '-' ->{//resta
+                ArrayList<Integer> in = NumbersGetter();
+                String R = calc.quit(in);
+                if(R.equals("f")){
+                    evaluate = false;
+                    
+                }else{
+                    result = Integer.valueOf(R);
+                    st.push(result);
+                    valid = true; //al haber un tipo de operacion es valida
+                }
+            }
             
+
+            }
             default->{
                 //comprobar que sea un numero
                 boolean number_check = Character.isDigit(c);
