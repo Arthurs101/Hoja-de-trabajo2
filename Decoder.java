@@ -43,7 +43,29 @@ public class Decoder {
                     valid = true; //al haber un tipo de operacion es valida
                 }
             }
-            
+            case '/'->{//division
+                ArrayList<Integer> in = NumbersGetter();
+                String R = calc.div(in);
+                if(R.equals("f")){
+                   evaluate = false;
+                }else{
+                    result = Integer.valueOf(R);
+                    st.push(result);
+                }
+
+            }
+            case '*'-> {//multiplicacion
+                ArrayList<Integer> in = NumbersGetter();
+                String R = calc.multi(in);
+                if(R.equals("f")){
+                    evaluate = false;
+                }else{
+                    result = Integer.valueOf(R);
+                    st.push(result);
+                    valid = true; //al haber un tipo de operacion es valida
+                    
+                }
+
 
             }
             default->{
